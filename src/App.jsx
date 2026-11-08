@@ -1,6 +1,7 @@
-import LandingPage from "./LandingPage";
+import FeedPage from "./FeedPage";
 
 function App() {
-  return <LandingPage />;
+  return <FeedPage />;
 }
+
 export default App;
