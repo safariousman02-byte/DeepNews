@@ -1,7 +1,7 @@
-import FeedPage from "./FeedPage";
+import LoginPage from "./LoginPage";
 
 function App() {
-  return <FeedPage />;
+  return <LoginPage />;
 }
 
 export default App;
