@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, Mic, Hexagon } from "lucide-react"; // We will install lucide-react later
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   return (
     // The main background is a deep void, but we add a subtle cyan glow at the top
     <div className="min-h-screen bg-[#08080A] text-white relative overflow-hidden font-sans">
@@ -35,10 +37,17 @@ export default function LandingPage() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="text-sm font-medium hover:text-cyan-400 transition">
+          <button
+            onClick={() => navigate("/login")}
+            className="text-sm font-medium hover:text-cyan-400 transition"
+          >
             Sign in
           </button>
-          <button className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]">
+
+          <button
+            onClick={() => navigate("/feed")}
+            className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]"
+          >
             Launch Console
           </button>
         </div>
