@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Search, Mic, Hexagon } from "lucide-react"; // We will install lucide-react later
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   // Load Google Fonts + inject Tailwind config equivalent (colors/fonts)
   useEffect(() => {
     // Google Fonts
@@ -484,6 +487,7 @@ export default function LoginPage() {
               <p className="text-xs text-slate-400">
                 Don't have an account?{" "}
                 <a
+                  onClick={() => navigate("/register")}
                   href="#"
                   className="font-semibold text-white hover:text-[#00f2fe] transition-colors underline underline-offset-4 ml-1"
                   style={{ textDecorationColor: "rgba(0,242,254,0.4)" }}
