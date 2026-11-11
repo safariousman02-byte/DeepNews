@@ -45,8 +45,11 @@ export default function LandingPage() {
           >
             Sign in
           </button>
-          <button className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]">
-            Launch Console
+          <button
+            onClick={() => navigate("/home")}
+            className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]"
+          >
+            Start
           </button>
         </div>
       </nav>
