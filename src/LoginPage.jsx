@@ -483,13 +483,13 @@ export default function LoginPage() {
             <div className="text-center pt-2">
               <p className="text-xs text-slate-400">
                 Don't have an account?{" "}
-                <link
-                  to="/register"
+                <a
+                  href="#"
                   className="font-semibold text-white hover:text-[#00f2fe] transition-colors underline underline-offset-4 ml-1"
                   style={{ textDecorationColor: "rgba(0,242,254,0.4)" }}
                 >
                   Register
-                </link>
+                </a>
               </p>
             </div>
           </form>

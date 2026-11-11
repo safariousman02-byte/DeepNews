@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Search, Mic, Hexagon } from "lucide-react"; // We will install lucide-react later
 
@@ -9,6 +10,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#08080A] text-white relative overflow-hidden font-sans">
       {/* Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
       {/* =========================================
           NAVBAR
       ========================================== */}
@@ -43,15 +45,12 @@ export default function LandingPage() {
           >
             Sign in
           </button>
-
-          <button
-            onClick={() => navigate("/feed")}
-            className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]"
-          >
+          <button className="bg-cyan-400 text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan-300 transition shadow-[0_0_15px_rgba(0,242,254,0.3)]">
             Launch Console
           </button>
         </div>
       </nav>
+
       {/* =========================================
           HERO SECTION
       ========================================== */}
@@ -94,46 +93,6 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        {/* =========================================
-          STATS ROW
-      ========================================== */}
-        <section className="relative z-10 max-w-5xl mx-auto mt-16 px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-b border-white/5 py-8">
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-white">
-                10<span className="text-cyan-400">ms</span>
-              </span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-                Ingestion Latency
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center border-l border-white/5">
-              <span className="text-3xl font-bold text-white">
-                99.4<span className="text-cyan-400">%</span>
-              </span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-                Consensus Precision
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center border-l border-white/5">
-              <span className="text-3xl font-bold text-white">2,190</span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-                Active Telemetry Streams
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center border-l border-white/5">
-              <span className="text-3xl font-bold text-white">
-                100<span className="text-cyan-400">%</span>
-              </span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-                Cryptographically Verified
-              </span>
-            </div>
-          </div>
-        </section>
       </header>
       {/* =========================================
           FEATURE CARDS
@@ -397,112 +356,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* =========================================
-          INTERACTIVE ARCHITECTURE
-      ========================================== */}
-      <section className="relative z-10 max-w-5xl mx-auto mt-24 px-4">
-        <div className="text-center mb-12">
-          <p className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 flex items-center justify-center gap-2">
-            <span className="material-symbols-rounded text-sm">code</span>{" "}
-            TECHNICAL PLAYGROUND
-          </p>
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Interactive Architecture & Data Spec.
-          </h2>
-          <p className="text-gray-400 text-sm max-w-xl mx-auto">
-            Inspect how LeedNews processes queries, delivers validated JSON
-            payload schemas, and plays neural audio feeds.
-          </p>
-
-          {/* Toggle Tabs */}
-          <div className="flex justify-center gap-2 mt-8">
-            <button className="bg-cyan-400 text-black px-4 py-1.5 rounded-full text-xs font-bold">
-              LIQUID SEARCH UI
-            </button>
-            <button className="bg-white/5 border border-white/10 text-gray-400 px-4 py-1.5 rounded-full text-xs font-medium hover:text-white transition">
-              API SPEC & JSON
-            </button>
-            <button className="bg-white/5 border border-white/10 text-gray-400 px-4 py-1.5 rounded-full text-xs font-medium hover:text-white transition">
-              AUDIO PIPELINE
-            </button>
-          </div>
-        </div>
-
-        {/* Playground Box */}
-        <div className="liquid-border bg-[#101014]/80 backdrop-blur-xl p-6 rounded-2xl grid md:grid-cols-2 gap-8">
-          {/* Left Side: Search UI */}
-          <div>
-            <h4 className="text-sm font-bold text-white mb-2">
-              The Liquid Glass Pill Interface
-            </h4>
-            <p className="text-xs text-gray-400 leading-relaxed mb-6">
-              Engineered with 30px backdrop blur and edge refraction. The search
-              pill parses query debouncing with live vector clustering to return
-              instant publisher consensus.
-            </p>
-            <ul className="space-y-4">
-              {[
-                "Spatial blur ring: Minimal cyan border illumination when active",
-                "Live operator filtering: Queries are tokenized against active endpoints",
-                "Collapsible publisher drawer: Auto-maps semantic tags",
-                "Integrated Neural Audio Synthesizer: Tap to trigger spoken-word index",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-xs text-gray-300"
-                >
-                  <span className="w-4 h-4 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-[10px] shrink-0 mt-0.5">
-                    {i + 1}
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right Side: JSON Code Mockup */}
-          <div className="bg-[#09090B] border border-white/5 rounded-xl p-4 font-mono">
-            <div className="flex justify-between items-center border-b border-white/5 pb-2 mb-3">
-              <span className="text-[10px] text-gray-500 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>{" "}
-                LIVE SEARCH TELEMETRY EGRESS
-              </span>
-              <span className="text-[9px] text-gray-600">
-                RATIO_SCORE: 0.994
-              </span>
-            </div>
-            <div className="space-y-3 text-[10px]">
-              <div className="flex items-center gap-2 text-cyan-400">
-                <span className="material-symbols-rounded text-xs">search</span>{" "}
-                Autonomous Systems
-              </div>
-              <div className="text-gray-500 italic">
-                "Retrieves 4,891 docs • 42 ms"
-              </div>
-
-              <div className="border-l border-white/10 pl-3 space-y-2">
-                <div className="bg-white/5 p-2 rounded">
-                  <div className="text-white font-bold">
-                    Next-Gen Autonomous Drone Corridors Receive Sovereign
-                    Certification
-                  </div>
-                  <div className="text-cyan-400 text-[9px] mt-1">
-                    INTELLIGENCE | Reuters | 8m ago
-                  </div>
-                </div>
-                <div className="bg-white/5 p-2 rounded">
-                  <div className="text-white font-bold">
-                    Autonomous Micro-Grids Save Off Grid Denizens
-                  </div>
-                  <div className="text-cyan-400 text-[9px] mt-1">
-                    INTELLIGENCE | Bloomberg | 14m ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* =========================================
           LIVE INGESTION FEEDS
       ========================================== */}

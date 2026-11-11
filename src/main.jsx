@@ -7,8 +7,6 @@ import { BrowserRouter } from "react-router-dom"; // 👈 Import this
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      {" "}
-      {/* 👈 Wrap App */}
       <App />
     </BrowserRouter>
   </React.StrictMode>,
